@@ -58,17 +58,20 @@ public class VectorHelper {
         }
     }
 }
+/**
+* Trier un vecteur d'entier  
+*/
 public static Vector<Integer> Trier(Vector<Integer> vector){
         int i = 0;
         int bool=0;
         int parcour = vector.size();
         while (bool==0 && parcour>1){
             bool=1;
-            while (i<parcour){
+            while (i<parcour-1){
                 if (vector.get(i) > vector.get(i+1)){
                     int temp = vector.get(i);
-                    vector.add(i,vector.get(i+1));
-                    vector.add(i+1,temp);
+                    vector.set(i,vector.get(i+1));
+                    vector.set(i+1,temp);
                     bool=0;
                 }
                 i++;
@@ -78,6 +81,9 @@ public static Vector<Integer> Trier(Vector<Integer> vector){
         }
         return vector;
     }
+/**
+*Sommer deux vecteurs et met le resultat dans un 3éme vecteur
+*/
     public static Vector<Integer> Somme_Vectors(Vector<Integer> vector1,Vector<Integer> vector2)throws size_different {
         Vector<Integer> result;
         if (vector1.size() != vector2.size()) throw new size_different();
@@ -90,3 +96,4 @@ public static Vector<Integer> Trier(Vector<Integer> vector){
         }
         return result;
     }
+
