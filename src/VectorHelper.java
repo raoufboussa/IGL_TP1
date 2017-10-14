@@ -64,11 +64,11 @@ public static Vector<Integer> Trier(Vector<Integer> vector){
         int parcour = vector.size();
         while (bool==0 && parcour>1){
             bool=1;
-            while (i<parcour){
+            while (i<parcour-1){
                 if (vector.get(i) > vector.get(i+1)){
                     int temp = vector.get(i);
-                    vector.add(i,vector.get(i+1));
-                    vector.add(i+1,temp);
+                    vector.set(i,vector.get(i+1));
+                    vector.set(i+1,temp);
                     bool=0;
                 }
                 i++;
